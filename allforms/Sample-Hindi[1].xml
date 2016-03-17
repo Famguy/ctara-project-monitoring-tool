@@ -1,0 +1,84 @@
+<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
+  <h:head>
+    <h:title>Sample-Hindi</h:title>
+    <model>
+      <instance>
+        <data id="build_Sample-Hindi_1304590342">
+          <Place>
+            <Village_Name/>
+            <Village_code/>
+            <District/>
+          </Place>
+        </data>
+      </instance>
+      <itext>
+        <translation lang="hin">
+          <text id="/data/Place:label">
+            <value>स्थान</value>
+          </text>
+          <text id="/data/Place/Village_Name:label">
+            <value>गांव का नाम</value>
+          </text>
+          <text id="/data/Place/Village_Name:hint">
+            <value>गांव का नाम दर्ज करें</value>
+          </text>
+          <text id="/data/Place/Village_code:label">
+            <value>गांव का कोड</value>
+          </text>
+          <text id="/data/Place/Village_code:hint">
+            <value>गांव का कोड लिखें</value>
+          </text>
+          <text id="/data/Place/District:label">
+            <value>जिला  </value>
+          </text>
+          <text id="/data/Place/District:hint">
+            <value>जिला यहां लिखें </value>
+          </text>
+        </translation>
+        <translation lang="eng">
+          <text id="/data/Place:label">
+            <value>Place</value>
+          </text>
+          <text id="/data/Place/Village_Name:label">
+            <value>Nmae of the village</value>
+          </text>
+          <text id="/data/Place/Village_Name:hint">
+            <value>Please enter name</value>
+          </text>
+          <text id="/data/Place/Village_code:label">
+            <value>Village code</value>
+          </text>
+          <text id="/data/Place/Village_code:hint">
+            <value>Please enter village code</value>
+          </text>
+          <text id="/data/Place/District:label">
+            <value>District</value>
+          </text>
+          <text id="/data/Place/District:hint">
+            <value>Please write Districe here</value>
+          </text>
+        </translation>
+      </itext>
+      <bind nodeset="/data/Place/Village_Name" type="string"/>
+      <bind nodeset="/data/Place/Village_code" type="string"/>
+      <bind nodeset="/data/Place/District" type="string"/>
+    </model>
+  </h:head>
+  <h:body>
+    <group>
+      <label ref="jr:itext('/data/Place:label')"/>
+      <input ref="/data/Place/Village_Name">
+        <label ref="jr:itext('/data/Place/Village_Name:label')"/>
+        <hint ref="jr:itext('/data/Place/Village_Name:hint')"/>
+      </input>
+      <input ref="/data/Place/Village_code">
+        <label ref="jr:itext('/data/Place/Village_code:label')"/>
+        <hint ref="jr:itext('/data/Place/Village_code:hint')"/>
+      </input>
+      <input ref="/data/Place/District">
+        <label ref="jr:itext('/data/Place/District:label')"/>
+        <hint ref="jr:itext('/data/Place/District:hint')"/>
+      </input>
+    </group>
+  </h:body>
+</h:html>

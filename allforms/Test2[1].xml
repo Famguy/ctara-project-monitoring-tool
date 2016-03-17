@@ -1,0 +1,109 @@
+<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
+  <h:head>
+    <h:title>Test2</h:title>
+    <model>
+      <instance>
+        <data id="build_Test2_1438766898">
+          <meta>
+            <instanceID/>
+          </meta>
+          <name/>
+          <age/>
+          <date/>
+          <location/>
+          <pic/>
+          <barcode/>
+          <select/>
+        </data>
+      </instance>
+      <itext>
+        <translation lang="eng">
+          <text id="/data/name:label">
+            <value>Enter Name:</value>
+          </text>
+          <text id="/data/name:hint">
+            <value></value>
+          </text>
+          <text id="/data/age:label">
+            <value>Enter Age:</value>
+          </text>
+          <text id="/data/date:label">
+            <value>Date of Entry:</value>
+          </text>
+          <text id="/data/location:label">
+            <value>Select Location:</value>
+          </text>
+          <text id="/data/pic:label">
+            <value>Take Picture:</value>
+          </text>
+          <text id="/data/barcode:label">
+            <value>Take Barcode</value>
+          </text>
+          <text id="/data/select:label">
+            <value>Choose Area</value>
+          </text>
+          <text id="/data/select:option0">
+            <value>North</value>
+          </text>
+          <text id="/data/select:option1">
+            <value>South</value>
+          </text>
+          <text id="/data/select:option2">
+            <value>East</value>
+          </text>
+          <text id="/data/select:option3">
+            <value>West</value>
+          </text>
+        </translation>
+      </itext>
+      <bind nodeset="/data/meta/instanceID" type="string" readonly="true()" calculate="concat('uuid:', uuid())"/>
+      <bind nodeset="/data/name" type="string"/>
+      <bind nodeset="/data/age" type="int"/>
+      <bind nodeset="/data/date" type="date"/>
+      <bind nodeset="/data/location" type="geopoint"/>
+      <bind nodeset="/data/pic" type="binary"/>
+      <bind nodeset="/data/barcode" type="barcode"/>
+      <bind nodeset="/data/select" type="select"/>
+    </model>
+  </h:head>
+  <h:body>
+    <input ref="/data/name">
+      <label ref="jr:itext('/data/name:label')"/>
+      <hint ref="jr:itext('/data/name:hint')"/>
+    </input>
+    <input ref="/data/age">
+      <label ref="jr:itext('/data/age:label')"/>
+    </input>
+    <input ref="/data/date">
+      <label ref="jr:itext('/data/date:label')"/>
+    </input>
+    <input ref="/data/location">
+      <label ref="jr:itext('/data/location:label')"/>
+    </input>
+    <upload ref="/data/pic" mediatype="image/*">
+      <label ref="jr:itext('/data/pic:label')"/>
+    </upload>
+    <input ref="/data/barcode">
+      <label ref="jr:itext('/data/barcode:label')"/>
+    </input>
+    <select ref="/data/select">
+      <label ref="jr:itext('/data/select:label')"/>
+      <item>
+        <label ref="jr:itext('/data/select:option0')"/>
+        <value>1</value>
+      </item>
+      <item>
+        <label ref="jr:itext('/data/select:option1')"/>
+        <value>2</value>
+      </item>
+      <item>
+        <label ref="jr:itext('/data/select:option2')"/>
+        <value>3</value>
+      </item>
+      <item>
+        <label ref="jr:itext('/data/select:option3')"/>
+        <value>4</value>
+      </item>
+    </select>
+  </h:body>
+</h:html>

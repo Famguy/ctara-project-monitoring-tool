@@ -1,0 +1,128 @@
+<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
+  <h:head>
+    <h:title>Project Completion Survey</h:title>
+    <model>
+      <instance>
+        <data id="build_Project-Completion-Survey_1443026288">
+          <meta>
+            <instanceID/>
+          </meta>
+          <project_name/>
+          <person_responisble/>
+          <location_name/>
+          <project_stage/>
+          <reporting_date/>
+          <project_pic/>
+        </data>
+      </instance>
+      <itext>
+        <translation lang="eng">
+          <text id="/data/project_name:label">
+            <value>प्रकल्पाचे नाव</value>
+          </text>
+          <text id="/data/project_name:hint">
+            <value>Name of the Project </value>
+          </text>
+          <text id="/data/person_responisble:label">
+            <value>जबाबदार व्यक्ती</value>
+          </text>
+          <text id="/data/person_responisble:hint">
+            <value>Person responsible</value>
+          </text>
+          <text id="/data/location_name:label">
+            <value>प्रकल्पाचे स्थान</value>
+          </text>
+          <text id="/data/location_name:hint">
+            <value>Project location</value>
+          </text>
+          <text id="/data/project_stage:label">
+            <value>प्रकल्पाची प्रगती</value>
+          </text>
+          <text id="/data/project_stage:hint">
+            <value>Project stage</value>
+          </text>
+          <text id="/data/project_stage:option0">
+            <value>१</value>
+          </text>
+          <text id="/data/project_stage:option1">
+            <value>२</value>
+          </text>
+          <text id="/data/project_stage:option2">
+            <value>३</value>
+          </text>
+          <text id="/data/project_stage:option3">
+            <value>४</value>
+          </text>
+          <text id="/data/project_stage:option4">
+            <value>५</value>
+          </text>
+          <text id="/data/reporting_date:label">
+            <value>तारीख</value>
+          </text>
+          <text id="/data/reporting_date:hint">
+            <value>Date</value>
+          </text>
+          <text id="/data/project_pic:label">
+            <value>फोटो</value>
+          </text>
+          <text id="/data/project_pic:hint">
+            <value>Project photo</value>
+          </text>
+        </translation>
+      </itext>
+      <bind nodeset="/data/meta/instanceID" type="string" readonly="true()" calculate="concat('uuid:', uuid())"/>
+      <bind nodeset="/data/project_name" type="string" required="true()"/>
+      <bind nodeset="/data/person_responisble" type="string" required="true()"/>
+      <bind nodeset="/data/location_name" type="geopoint" required="true()"/>
+      <bind nodeset="/data/project_stage" type="select1" required="true()"/>
+      <bind nodeset="/data/reporting_date" type="date" required="true()"/>
+      <bind nodeset="/data/project_pic" type="binary"/>
+    </model>
+  </h:head>
+  <h:body>
+    <input ref="/data/project_name">
+      <label ref="jr:itext('/data/project_name:label')"/>
+      <hint ref="jr:itext('/data/project_name:hint')"/>
+    </input>
+    <input ref="/data/person_responisble">
+      <label ref="jr:itext('/data/person_responisble:label')"/>
+      <hint ref="jr:itext('/data/person_responisble:hint')"/>
+    </input>
+    <input ref="/data/location_name">
+      <label ref="jr:itext('/data/location_name:label')"/>
+      <hint ref="jr:itext('/data/location_name:hint')"/>
+    </input>
+    <select1 ref="/data/project_stage">
+      <label ref="jr:itext('/data/project_stage:label')"/>
+      <hint ref="jr:itext('/data/project_stage:hint')"/>
+      <item>
+        <label ref="jr:itext('/data/project_stage:option0')"/>
+        <value>1</value>
+      </item>
+      <item>
+        <label ref="jr:itext('/data/project_stage:option1')"/>
+        <value>2</value>
+      </item>
+      <item>
+        <label ref="jr:itext('/data/project_stage:option2')"/>
+        <value>3</value>
+      </item>
+      <item>
+        <label ref="jr:itext('/data/project_stage:option3')"/>
+        <value>4</value>
+      </item>
+      <item>
+        <label ref="jr:itext('/data/project_stage:option4')"/>
+        <value>5</value>
+      </item>
+    </select1>
+    <input ref="/data/reporting_date">
+      <label ref="jr:itext('/data/reporting_date:label')"/>
+      <hint ref="jr:itext('/data/reporting_date:hint')"/>
+    </input>
+    <upload ref="/data/project_pic" mediatype="image/*">
+      <label ref="jr:itext('/data/project_pic:label')"/>
+      <hint ref="jr:itext('/data/project_pic:hint')"/>
+    </upload>
+  </h:body>
+</h:html>

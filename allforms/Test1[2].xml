@@ -1,0 +1,73 @@
+<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
+  <h:head>
+    <h:title>Test1</h:title>
+    <model>
+      <instance>
+        <data id="build_Test1_1438604153">
+          <meta>
+            <instanceID/>
+          </meta>
+          <name/>
+          <age/>
+          <area/>
+        </data>
+      </instance>
+      <itext>
+        <translation lang="eng">
+          <text id="/data/name:label">
+            <value>Name of User</value>
+          </text>
+          <text id="/data/age:label">
+            <value>Age of User</value>
+          </text>
+          <text id="/data/area:label">
+            <value>Area of Stay</value>
+          </text>
+          <text id="/data/area:option0">
+            <value>Mumbai</value>
+          </text>
+          <text id="/data/area:option1">
+            <value>Delhi</value>
+          </text>
+          <text id="/data/area:option2">
+            <value>Chennai</value>
+          </text>
+          <text id="/data/area:option3">
+            <value>Kolkata</value>
+          </text>
+        </translation>
+      </itext>
+      <bind nodeset="/data/meta/instanceID" type="string" readonly="true()" calculate="concat('uuid:', uuid())"/>
+      <bind nodeset="/data/name" type="string" required="true()"/>
+      <bind nodeset="/data/age" type="int"/>
+      <bind nodeset="/data/area" type="select1"/>
+    </model>
+  </h:head>
+  <h:body>
+    <input ref="/data/name">
+      <label ref="jr:itext('/data/name:label')"/>
+    </input>
+    <input ref="/data/age">
+      <label ref="jr:itext('/data/age:label')"/>
+    </input>
+    <select1 ref="/data/area">
+      <label ref="jr:itext('/data/area:label')"/>
+      <item>
+        <label ref="jr:itext('/data/area:option0')"/>
+        <value>1</value>
+      </item>
+      <item>
+        <label ref="jr:itext('/data/area:option1')"/>
+        <value>2</value>
+      </item>
+      <item>
+        <label ref="jr:itext('/data/area:option2')"/>
+        <value>4</value>
+      </item>
+      <item>
+        <label ref="jr:itext('/data/area:option3')"/>
+        <value>3</value>
+      </item>
+    </select1>
+  </h:body>
+</h:html>
