@@ -7,5 +7,4 @@ Dependencies:
 * ODK database system
 * ODK form builder
 
-Check out the project prototype here: http://home.iitb.ac.in/~sagunpai/ctara/
 
